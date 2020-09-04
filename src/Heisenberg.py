@@ -7,9 +7,9 @@ import os
 
 
 
-#Create Data directory
+#Create data directory
 current=os.getcwd()
-newdir="Data"
+newdir="data"
 path = os.path.join(current, newdir) 
 if not os.path.isdir(path):
     os.makedirs(path)
@@ -588,11 +588,11 @@ class Heisenberg:
                         plt.plot(range(self.steps+1), avg_mag_sim[0])
                         plt.xlabel("Simulation Timestep")
                         plt.ylabel("Average Magnetization")
-                        plt.savefig("Data/Simulator_result_qubit{}.png".format(j+1))
+                        plt.savefig("data/Simulator_result_qubit{}.png".format(j+1))
                         plt.close()
                     self.result_out_list.append(avg_mag_sim[0])
-                    existing=glob.glob("Data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(j+1, self.num_qubits))
-                    np.savetxt("Data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mag_sim[0])
+                    existing=glob.glob("data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(j+1, self.num_qubits))
+                    np.savetxt("data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mag_sim[0])
                 self.result_matrix=np.stack(self.result_out_list)
                 print("Done")
                 with open(self.namevar,'a') as tempfile:
@@ -622,11 +622,11 @@ class Heisenberg:
                         plt.plot(range(self.steps+1), avg_mag_qc[0])
                         plt.xlabel("Simulation Timestep")
                         plt.ylabel("Average Magnetization")
-                        plt.savefig("Data/QC_result_qubit{}.png".format(j+1))
+                        plt.savefig("data/QC_result_qubit{}.png".format(j+1))
                         plt.close()
                     self.result_out_list.append(avg_mag_qc[0])
-                    existing=glob.glob("Data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(j+1, self.num_qubits))
-                    np.savetxt("Data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mac_qc[0])
+                    existing=glob.glob("data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(j+1, self.num_qubits))
+                    np.savetxt("data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mac_qc[0])
                 self.result_matrix=np.stack(self.result_out_list)           
                 print("Done")
                 with open(self.namevar,'a') as tempfile:
@@ -673,10 +673,10 @@ class Heisenberg:
                     plt.plot(qubit_specific_row)
                     plt.xlabel("Simulation Timestep")
                     plt.ylabel("Average Magnetization")
-                    plt.savefig("Data/Result_qubit{}.png".format(i+1))
+                    plt.savefig("data/Result_qubit{}.png".format(i+1))
                     plt.close()
-                existing=glob.glob("Data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(i+1,self.num_qubits))
-                np.savetxt("Data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(i+1,self.num_qubits,len(existing)+1),qubit_specific_row)
+                existing=glob.glob("data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(i+1,self.num_qubits))
+                np.savetxt("data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(i+1,self.num_qubits,len(existing)+1),qubit_specific_row)
             print("Done")
             with open(self.namevar,'a') as tempfile:
                 tempfile.write("Done\n")
