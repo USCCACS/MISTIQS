@@ -3,18 +3,16 @@ A full-stack, cross-platform software for generating, compiling, and executing q
 
 MISTIQS provides the following primary capabilities:
 
-1) Generation of quantum circuits for performing quantum simulations of the dynamics of spins governed by input Heisenberg Hamiltonians
+1) Generation of quantum circuits for performing quantum simulations of the dynamics of spin chains governed by input Heisenberg Hamiltonians
 
 2) Translation of these quantum circuits into executable circuit objects for IBM, Rigetti, and Googele quantum devices (Qiskit circuit objects, Pyquil programs, and Cirq circuit objects respectively)
 
-3) Compilation of circuits, either using the compilers native to the quantum computing platform of choice or using the domain-specific IBM and Rigetti compilers developed for TFIM simulations (more information here)
+3) Compilation of circuits, either using the compilers native to the quantum computing platform of choice or using the domain-specific IBM and Rigetti compilers developed for TFIM simulations (more information [here](https://arxiv.org/abs/2004.07418))
 
-3) Execution of these circuits on IBM or Rigetti quantum processors
+4) Execution of these circuits on IBM or Rigetti quantum processors
 
-4) Post-processing and plotting of simulation results (limited to average magnetization data)
+5) Post-processing and plotting of simulation results (limited to average magnetization data)
 
-MISTIQS provides the user with extensive flexibility across its functionalities. Some examples include support for user-defined time dependence functions for external fields, 
+MISTIQS provides the user with extensive flexibility across its functionalities. Some examples include support for user-defined time dependence functions for external fields, full XYZ model support in Hamiltonian constructions, and options to only use portions of the code functionality (such as only generating the quantum circuits without execution or running existing quantum circuits through the integrated domain-specific compilers for optimization purposes).
 
-To aid future researchers in benefiting from our domain-specific (DS) compilers, we have integrated them into the full stack quantum simulation software package provided in this repo.  This package provides the capability to i) generate circuits for the transverse-field Ising model (TFIM) simulations of interest in this article; ii) apply the DS compilers to these high-level circuits to generate hardware-executable circuits on either the Rigetti or IBM quantum processors; iii) execute the circuits on the Rigetti or IBM quantum processors; and iv) provide limited post-processing and plotting of results.  
-
-If the user is solely interested in studying the performance of our DS compilers on their own TFIM circuits, they may also elect to bypass circuit generation and execution and have the software simply return the DS-compiled circuit.   The two provided tutorials provide demonstrations of how to carry out each use case within this software packge.
+Please see the documentation, as well as the example jupyter notebook provided.
