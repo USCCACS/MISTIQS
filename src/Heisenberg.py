@@ -50,7 +50,7 @@ class Heisenberg:
         self.ibm_circuits_list=[]
         self.rigetti_circuits_list=[]
         self.cirq_circuits_list=[]
-        self.auto_smart_compile="y"
+        self.auto_ds_compile="y"
         self.default_compiler="native" #native or domain specific
         self.compile="y"
 
@@ -97,8 +97,8 @@ class Heisenberg:
                 self.compile=value
             elif "*ext_dir" in data[i]:
                 self.ext_dir=value
-            elif "*auto_smart_compile" in data[i]:
-                self.auto_smart_compile=value
+            elif "*auto_ds_compile" in data[i]:
+                self.auto_ds_compile=value
             elif "*custom_time_dep" in data[i]:
                 self.custom_time_dep=value
                 if self.custom_time_dep in "y":
@@ -279,14 +279,14 @@ class Heisenberg:
             tempfile.write("IBM quantum circuit objects created\n")
 
         if "y" in self.compile:
-            if self.JZ != 0 and self.JX==self.JY==0 and self.h_ext!=0 and self.ext_dir=="X" and self.auto_smart_compile=="y":
+            if self.JZ != 0 and self.JX==self.JY==0 and self.h_ext!=0 and self.ext_dir=="X" and self.auto_ds_compile=="y":
                 #TFIM
                 print("TFIM detected, enabling DS compiler")
                 with open(self.namevar,'a') as tempfile:
                     tempfile.write("TFIM detected, enabling DS compiler\n")
                 temp=[]
                 for circuit in self.ibm_circuits_list:
-                    compiled=smart_compile(circuit,self.backend)
+                    compiled=ds_compile(circuit,self.backend)
                     temp.append(compiled)
                 self.ibm_circuits_list=temp
 
@@ -296,7 +296,7 @@ class Heisenberg:
                 with open(self.namevar,'a') as tempfile:
                     tempfile.write("Compiling circuits...\n")
                 for circuit in self.ibm_circuits_list:
-                    compiled=smart_compile(circuit,self.backend)
+                    compiled=ds_compile(circuit,self.backend)
                     temp.append(compiled)
                 self.ibm_circuits_list=temp
                 print("Circuits compiled successfully")
@@ -347,14 +347,15 @@ class Heisenberg:
 
         if "y" in self.compile:
             qc=get_qc(self.device_choice)
-            if self.JZ != 0 and self.JX==self.JY==0 and self.h_ext!=0 and self.ext_dir=="X" and self.auto_smart_compile=="y":
+            qc.compiler.client.timeout = 30 #increase this if timeout errors occur
+            if self.JZ != 0 and self.JX==self.JY==0 and self.h_ext!=0 and self.ext_dir=="X" and self.auto_ds_compile=="y":
                 #TFIM
                 print("TFIM detected, enabling DS compiler")
                 with open(self.namevar,'a') as tempfile:
                     tempfile.write("TFIM detected, enabling DS compiler\n")
                 temp=[]
                 for circuit in self.rigetti_circuits_list:
-                    temp.append(smart_compile(circuit,self.backend,self.shots))
+                    temp.append(ds_compile(circuit,self.backend,self.shots))
                 self.rigetti_circuits_list=temp
 
             elif self.default_compiler in "ds":
@@ -363,7 +364,7 @@ class Heisenberg:
                 with open(self.namevar,'a') as tempfile:
                     tempfile.write("Compiling circuits...\n")
                 for circuit in self.rigetti_circuits_list:
-                    temp.append(smart_compile(circuit,self.backend,self.shots))
+                    temp.append(ds_compile(circuit,self.backend,self.shots))
                 self.rigetti_circuits_list=temp
                 print("Circuits compiled successfully")
                 with open(self.namevar,'a') as tempfile:

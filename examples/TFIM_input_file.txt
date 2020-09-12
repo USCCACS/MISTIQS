@@ -1,16 +1,17 @@
-﻿
-*JX
+*JZ
 0.01183898
 
 
-*JY 
-0.01183898
+*h_ext
+0.01867836
 
+*ext_dir
+X
 
 #any desired comments
 
 *initial_spins 
-1,1,1,-1,-1,-1
+1,1,1
 
 
 *delta_t 
@@ -22,21 +23,15 @@
 
 
 *shots 
-8192
+1024
 
 
 *num_qubits
-6
+3
 
 
 *device
-8q-qvm
+ibmq_ourense
 
 *backend
-rigetti
-
-
-
-
-
-
+ibm

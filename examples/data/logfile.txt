@@ -1,0 +1,31 @@
+***MISTIQS Session Log File***
+
+Generating timestep 0 circuit
+Generating timestep 1 circuit
+Generating timestep 2 circuit
+Generating timestep 3 circuit
+Generating timestep 4 circuit
+Generating timestep 5 circuit
+Generating timestep 6 circuit
+Generating timestep 7 circuit
+Generating timestep 8 circuit
+Generating timestep 9 circuit
+Generating timestep 10 circuit
+Generating timestep 11 circuit
+Generating timestep 12 circuit
+Generating timestep 13 circuit
+Generating timestep 14 circuit
+Generating timestep 15 circuit
+Generating timestep 16 circuit
+Generating timestep 17 circuit
+Generating timestep 18 circuit
+Generating timestep 19 circuit
+Generating timestep 20 circuit
+Creating Pyquil program list...
+TFIM detected, enabling DS compiler
+Pyquil program list created successfully
+Running Pyquil programs...
+Post-Processing qubit 1 data...
+Post-Processing qubit 2 data...
+Post-Processing qubit 3 data...
+Done
