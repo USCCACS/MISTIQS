@@ -36,6 +36,7 @@ If this is set to **y**, a custom python function named **external func** must b
 - An example is given below:
 
 ![external field function](./external_func.png)
+
 8. **freq** : If time_dep parameter is set to **y**, and a custom time dependence function is not specified, this controls the frequency of the cosine term driving the time dependence of the external field
 - Units: 1/fs
 - Default value: 0
