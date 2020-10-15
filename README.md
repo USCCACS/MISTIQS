@@ -1,4 +1,6 @@
 # MISTIQS: Multiplatform Software for Time-dependent Quantum Simulation
+![MISTIQS top](docs/MISTIQS_top.png)
+
 A full-stack, cross-platform software for generating, compiling, and executing quantum circuits for simulating quantum many-body dynamics of systems governed by Heisenberg Hamiltonians.
 
 MISTIQS provides the following primary capabilities:
