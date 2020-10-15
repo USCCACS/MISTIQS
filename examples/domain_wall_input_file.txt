@@ -30,10 +30,10 @@
 
 
 *device
-8q-qvm
+ibmq_16_melbourne
 
 *backend
-rigetti
+ibm
 
 
 

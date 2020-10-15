@@ -3,7 +3,7 @@
 
 
 *h_ext
-0.01867836
+0.01183898
 
 *ext_dir
 X
@@ -11,7 +11,7 @@ X
 #any desired comments
 
 *initial_spins 
-1,1,1
+1,1
 
 
 *delta_t 
@@ -19,7 +19,7 @@ X
 
 
 *steps
-20
+75
 
 
 *shots 
@@ -27,11 +27,17 @@ X
 
 
 *num_qubits
-3
+2
 
 
 *device
-ibmq_ourense
+ibmq_16_melbourne
 
 *backend
 ibm
+
+*QCQS
+QS
+
+*time_dep_flag
+y
