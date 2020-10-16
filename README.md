@@ -23,7 +23,7 @@ The core code of MISTIQS only requires numpy to run. Executing quantum circuits 
 
 # II. Importing the Software For Use
 
-For full use of the software, simply add the MISTIQS/src directory to your path and run
+For full use of the software, simply add the **MISTIQS/src** directory to your path and run
 
     from Heisenberg import Heisenberg
 
@@ -33,7 +33,7 @@ If you only want to use the domain-specific compilers, add the MISTIQS/src direc
 
     from Heisenberg import ds_compiler
 
-Now you can call ds_compile() on existing IBM or Rigetti quantum circuit objects.
+Now you can call **ds_compile()** on existing IBM or Rigetti quantum circuit objects.
 
 
-Please see the documentation, as well as the example jupyter notebook provided.
+Please see [documentation](https://github.com/USCCACS/MISTIQS/blob/master/docs/MISTIQS%20User's%20Guide.md), as well as [examples](https://github.com/USCCACS/MISTIQS/tree/master/examples) provided.
