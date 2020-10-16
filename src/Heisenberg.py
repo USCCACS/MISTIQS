@@ -627,7 +627,7 @@ class Heisenberg:
                         plt.close()
                     self.result_out_list.append(avg_mag_qc[0])
                     existing=glob.glob("data/Spin {} Average Magnetization Data, Qubits={}, num_*.txt".format(j+1, self.num_qubits))
-                    np.savetxt("data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mac_qc[0])
+                    np.savetxt("data/Spin {} Average Magnetization Data, Qubits={}, num_{}.txt".format(j+1,self.num_qubits,len(existing)+1),avg_mag_qc[0])
                 self.result_matrix=np.stack(self.result_out_list)           
                 print("Done")
                 with open(self.namevar,'a') as tempfile:

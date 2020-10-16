@@ -11,7 +11,7 @@ X
 #any desired comments
 
 *initial_spins 
-1,1
+1,1,1,1
 
 
 *delta_t 
@@ -19,7 +19,7 @@ X
 
 
 *steps
-75
+30
 
 
 *shots 
@@ -27,7 +27,7 @@ X
 
 
 *num_qubits
-2
+4
 
 
 *device
@@ -37,7 +37,7 @@ ibmq_16_melbourne
 ibm
 
 *QCQS
-QS
+QC
 
 *time_dep_flag
 y
