@@ -10,7 +10,7 @@ import os
 #Create data directory
 current=os.getcwd()
 newdir="data"
-path = os.path.join(current, newdir) 
+path = os.path.join(current, newdir)
 if not os.path.isdir(path):
     os.makedirs(path)
 
@@ -585,10 +585,20 @@ class Heisenberg:
                     # time_vec=np.linspace(0,total_t,steps)
                     # time_vec=time_vec*JX/H_BAR
                     if "y" in self.plot_flag:
-                        plt.figure()
+                        fig, ax = plt.subplots()
                         plt.plot(range(self.steps+1), avg_mag_sim[0])
-                        plt.xlabel("Simulation Timestep")
-                        plt.ylabel("Average Magnetization")
+                        plt.xlabel("Simulation Timestep",fontsize=14)
+                        plt.ylabel("Average Magnetization",fontsize=14)
+                        plt.tight_layout()
+                        every_nth = 2
+                        for n, label in enumerate(ax.xaxis.get_ticklabels()):
+                            if (n+1) % every_nth != 0:
+                                label.set_visible(False)
+                        every_nth = 2
+                        for n, label in enumerate(ax.yaxis.get_ticklabels()):
+                            if (n+1) % every_nth != 0:
+                                label.set_visible(False)
+                        # plt.yticks(np.arange(-1, 1, step=0.2))  # Set label locations.
                         plt.savefig("data/Simulator_result_qubit{}.png".format(j+1))
                         plt.close()
                     self.result_out_list.append(avg_mag_sim[0])
@@ -619,10 +629,19 @@ class Heisenberg:
                     
                     # QC
                     if "y" in self.plot_flag:
-                        plt.figure()
+                        fig, ax = plt.subplots()
                         plt.plot(range(self.steps+1), avg_mag_qc[0])
-                        plt.xlabel("Simulation Timestep")
-                        plt.ylabel("Average Magnetization")
+                        plt.xlabel("Simulation Timestep",fontsize=14)
+                        plt.ylabel("Average Magnetization",fontsize=14)
+                        plt.tight_layout()
+                        every_nth = 2
+                        for n, label in enumerate(ax.xaxis.get_ticklabels()):
+                            if (n+1) % every_nth != 0:
+                                label.set_visible(False)
+                        every_nth = 2
+                        for n, label in enumerate(ax.yaxis.get_ticklabels()):
+                            if (n+1) % every_nth != 0:
+                                label.set_visible(False)
                         plt.savefig("data/QC_result_qubit{}.png".format(j+1))
                         plt.close()
                     self.result_out_list.append(avg_mag_qc[0])

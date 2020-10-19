@@ -1,16 +1,17 @@
-﻿
-*JX
+*JZ
 0.01183898
 
 
-*JY 
+*h_ext
 0.01183898
 
+*ext_dir
+X
 
 #any desired comments
 
 *initial_spins 
-1,1,1,-1,-1,-1
+1,1,1,1
 
 
 *delta_t 
@@ -18,15 +19,15 @@
 
 
 *steps
-50
+30
 
 
 *shots 
-8192
+1024
 
 
 *num_qubits
-6
+4
 
 
 *device
@@ -35,8 +36,14 @@ ibmq_16_melbourne
 *backend
 ibm
 
+*QCQS
+QS
 
+*time_dep_flag
+y
 
+*auto_ds_compile
+n
 
-
-
+*compile
+n
