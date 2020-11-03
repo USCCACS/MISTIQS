@@ -19,7 +19,7 @@ MISTIQS provides the user with extensive flexibility across its functionalities.
 
 
 # I. Getting Started
-The core code of MISTIQS only requires numpy to run. Executing quantum circuits requires glob, and plotting them requires matplotlib. For generating and/or plotting quantum circuits for IBM hardware, qiskit is required. Similarly, pyquil is required for Rigetti use cases, and cirq is required for generating circuits for the Cirq platform.
+The core code of MISTIQS only requires numpy to run. Executing quantum circuits requires glob, and plotting them requires matplotlib. For generating and/or plotting quantum circuits for IBM hardware, qiskit is required (0.21.0 currently supported). Similarly, pyquil is required for Rigetti use cases (qvm 1.17.1 and quilc 1.21.0 current supported), and cirq is required for generating circuits for the Cirq platform (0.9.1 current supported).
 
 # II. Importing the Software For Use
 
