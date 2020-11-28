@@ -37,7 +37,10 @@ ibmq_valencia
 ibm
 
 *QCQS
-QC
+QS
 
 *time_dep_flag
 y
+
+*noise_choice
+n
