@@ -7,7 +7,7 @@ MISTIQS provides the following primary capabilities:
 
 1) Generation of quantum circuits for performing quantum simulations of the dynamics of spin chains governed by input Heisenberg Hamiltonians
 
-2) Translation of these quantum circuits into executable circuit objects for IBM, Rigetti, and Googele quantum devices (Qiskit circuit objects, Pyquil programs, and Cirq circuit objects respectively)
+2) Translation of these quantum circuits into executable circuit objects for IBM, Rigetti, and Google quantum devices (Qiskit circuit objects, Pyquil programs, and Cirq circuit objects respectively)
 
 3) Compilation of circuits, either using the compilers native to the quantum computing platform of choice or using the domain-specific IBM and Rigetti compilers developed for TFIM simulations (more information [here](https://arxiv.org/abs/2004.07418))
 
